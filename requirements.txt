@@ -1,0 +1,14 @@
+# 核心依赖（必需）
+requests>=2.28.0
+pillow>=10.0.0
+opencv-python>=4.8.0
+numpy>=1.24.0
+pyvista>=0.43.0
+
+# PDF 处理依赖（必需，用于 PDF 转图像）
+pymupdf>=1.23.0
+
+# OCR 服务依赖（可选，如果使用 OCR 功能）
+paddlepaddle>=3.0.0
+paddleocr>=2.7.0
+flask>=3.0.0
