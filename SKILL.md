@@ -368,7 +368,22 @@ python process_drawings.py --images drawing.png --llm-model "google/gemini-3.1-p
 | PDF 转图（600 DPI，per page）| 约 3 至 5 秒 |
 | OCR 识别（per image）| 约 5 至 30 秒 |
 
-> **重要**：所有 Bash 工具调用 `timeout` 必须设置为 `1200000`（20 分钟），详见 `CLAUDE.md`。
+> **重要**：所有 Bash 工具调用 `timeout` 必须设置为 `3600000`（60 分钟），详见 `CLAUDE.md`。
+
+---
+
+## 已知限制
+
+| 任务 | 可靠性 | 说明 |
+|------|--------|------|
+| 图纸类型识别（平面 / 立面）| 高 | 语义判断，准确率稳定 |
+| 文字标注、轴线编号读取 | 高 | OCR + LLM 双重验证 |
+| 识别结构体系 | 中 | 宏观判断，不涉及精确计数 |
+| 精确统计构件数量 | 低 | Transformer 不擅长系统性枚举，密集符号易漏数 |
+| 构件精确坐标（mm 级）| 低 | LLM 输出坐标为语义估计，非测量值 |
+
+**适合场景：** 快速了解图纸类型、提取标高/轴网文字标注、辅助人工审核。
+**不适合场景：** 生产级 BIM 精确数据、结构安全验算。
 
 ---
 
@@ -391,4 +406,3 @@ python process_drawings.py --images drawing.png --llm-model "google/gemini-3.1-p
 | `ocr_service/ocr_cli.py` | OCR 命令行测试工具 |
 | `config.json` | 主配置文件（含 API Key 占位字段）|
 | `CLAUDE.md` | Claude Code 执行规范（超时、OCR 管理）|
-
