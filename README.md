@@ -430,8 +430,4 @@ class CustomLLMClient(LLMClientInterface):
 
 本项目仅供学习和研究使用。
 
-## 联系方式
-
-如有问题或建议，请提交 Issue。
-
 ---
