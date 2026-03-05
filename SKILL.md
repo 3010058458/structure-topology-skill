@@ -368,7 +368,7 @@ python process_drawings.py --images drawing.png --llm-model "google/gemini-3.1-p
 | PDF 转图（600 DPI，per page）| 约 3 至 5 秒 |
 | OCR 识别（per image）| 约 5 至 30 秒 |
 
-> **重要**：所有 Bash 工具调用 `timeout` 必须设置为 `3600000`（60 分钟），详见 `CLAUDE.md`。
+> **重要**：所有 Bash 工具调用 `timeout` 必须设置为 `3600000`（60 分钟）。
 
 ---
 
@@ -406,3 +406,4 @@ python process_drawings.py --images drawing.png --llm-model "google/gemini-3.1-p
 | `ocr_service/ocr_cli.py` | OCR 命令行测试工具 |
 | `config.json` | 主配置文件（含 API Key 占位字段）|
 | `CLAUDE.md` | Claude Code 执行规范（超时、OCR 管理）|
+
